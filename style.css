@@ -9,6 +9,10 @@ a {
   color: #131313;
 }
 
+ul {
+  list-style: none;
+}
+
 .cv {
   max-width: 1200px;
   margin: 0 auto;
@@ -76,6 +80,75 @@ a {
 }
 .info__link-logo.phone svg {
   width: 40px;
+}
+
+.education {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.education__title {
+  text-transform: uppercase;
+  font-size: 45px;
+  padding-left: 3%;
+}
+.education__list-item {
+  padding-left: 3%;
+  font-size: 20px;
+}
+.education__list-item {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.education__list-item::before {
+  content: " ";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #131313;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.spoiler:not(.spoiler--disabled) .spoiler__title {
+  position: relative;
+  border: 1px solid #131313;
+  cursor: pointer;
+}
+.spoiler:not(.spoiler--disabled) .spoiler__title:hover {
+  background-color: #788872;
+}
+.spoiler:not(.spoiler--disabled) .spoiler__title:active {
+  background-color: #36472f;
+}
+.spoiler:not(.spoiler--disabled) .spoiler__title::before, .spoiler:not(.spoiler--disabled) .spoiler__title::after {
+  content: " ";
+  display: block;
+  width: 34px;
+  height: 6px;
+  background-color: #131313;
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  margin-top: -3px;
+}
+.spoiler:not(.spoiler--disabled).hidden {
+  overflow: hidden;
+  position: relative;
+}
+.spoiler:not(.spoiler--disabled).hidden .spoiler__title {
+  z-index: 0;
+  background: #ffffff;
+}
+.spoiler:not(.spoiler--disabled).hidden .spoiler__title::after {
+  transform: rotate(90deg);
+}
+.spoiler:not(.spoiler--disabled).hidden .spoiler__content {
+  position: absolute;
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  bottom: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
