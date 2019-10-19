@@ -176,11 +176,6 @@ ul {
         }
     }
 
-    .spoiler__content {
-        display: none;
-    }
-
-
     &.hidden {
         .spoiler__title {
             z-index: 0;
@@ -196,13 +191,17 @@ ul {
                 animation-direction: reverse;
             }
         }
+
+        .spoiler__content{
+            display: none;
+        }
     }
 
-    &.shown {
+    /*&.shown {
         .spoiler__content {
             display: block;
         }
-    }
+    }*/
 
     &.active {
         .spoiler__content {

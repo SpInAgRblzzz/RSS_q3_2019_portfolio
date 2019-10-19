@@ -113,6 +113,11 @@ ul {
 .spoiler:not(.spoiler--disabled) {
   overflow: hidden;
   position: relative;
+  /*&.shown {
+      .spoiler__content {
+          display: block;
+      }
+  }*/
 }
 .spoiler:not(.spoiler--disabled) .spoiler__title {
   position: relative;
@@ -138,9 +143,6 @@ ul {
   margin-top: -3px;
   transition: 200ms;
 }
-.spoiler:not(.spoiler--disabled) .spoiler__content {
-  display: none;
-}
 .spoiler:not(.spoiler--disabled).hidden .spoiler__title {
   z-index: 0;
 }
@@ -151,8 +153,8 @@ ul {
 .spoiler:not(.spoiler--disabled).hidden.active .spoiler__content {
   animation-direction: reverse;
 }
-.spoiler:not(.spoiler--disabled).shown .spoiler__content {
-  display: block;
+.spoiler:not(.spoiler--disabled).hidden .spoiler__content {
+  display: none;
 }
 .spoiler:not(.spoiler--disabled).active .spoiler__content {
   display: block;
