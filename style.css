@@ -24,6 +24,7 @@ a {
   margin: 0 auto;
   padding-left: 40px;
   padding-right: 40px;
+  padding-bottom: 35px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -47,6 +48,7 @@ a {
   align-items: center;
   justify-content: space-between;
   width: 80%;
+  font-weight: 600;
 }
 .info__link:hover {
   color: #788872;
