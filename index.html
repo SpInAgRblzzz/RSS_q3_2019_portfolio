@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RSS_Q3_2019_portfolio</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">    
 </head>
 
 <body>
@@ -112,7 +112,7 @@
                         <div class="slider__item-project">
                             <img src="img/THEYALOW placeholder.jpg" alt="" class="slider__project-placeholder">
                             <div class="slider__project-wrapper inactive">
-                                <iframe src="projects\theyalow\index.html" frameborder="0"></iframe>
+                                <iframe src="projects\theyalow\index.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                         </div>
                         <div class="slider__item-description spoiler spoiler--disabled">
@@ -178,8 +178,12 @@
             </div>
         </section>
     </article>
-    <script src="js/spoiler.js"></script>
-    <script src="js/slider.js"></script>
-</body>
 
+    <div class="mode inactive">
+        <button class="mode__toggle">MOBILE</button>
+        <button class="mode__back">BACK</button>
+    </div>
+    <script src="js/spoiler.js"></script>
+    <script src="js/slider.js"></script>    
+</body>
 </html>
