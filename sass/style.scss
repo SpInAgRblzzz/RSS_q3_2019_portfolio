@@ -104,6 +104,7 @@ ul {
 .education {
     max-width: 900px;
     margin: 0 auto;
+    padding-bottom: 35px;
 
     &__title {
         text-transform: uppercase;
@@ -192,7 +193,7 @@ ul {
             }
         }
 
-        .spoiler__content{
+        .spoiler__content {
             display: none;
         }
     }
@@ -214,6 +215,104 @@ ul {
 }
 
 
+
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 150px;
+    padding-right: 150px;
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 45px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+.slider {
+    position: relative;
+
+    &__wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__btn {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        height: 100%;
+        width: 70px;
+
+        cursor: pointer;
+
+        &--back {
+            right: 100%;
+            left: auto;
+
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__item {
+        display: none;
+        z-index: 0;
+        border: 1px solid #131313;
+
+        &.active {
+            display: flex;
+            height: 500px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        &.to-left {
+            position: absolute;
+            display: flex;
+            width: 100%;
+            animation: to-left 200ms 1 linear;
+            z-index: 1;
+        }
+
+        &.to-right {
+            position: absolute;
+            display: flex;
+            width: 100%;
+            animation: to-right 200ms 1 linear;
+            z-index: 1;
+        }
+    }
+
+    &__item-project {
+        flex: 2;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__item-description {
+        flex: 1;
+        background-color: rgb(155, 216, 130);
+    }
+
+    &__project-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &.inactive {
+            display: none;
+        }
+    }
+}
+
 @keyframes show {
 
     0% {
@@ -222,5 +321,29 @@ ul {
 
     100% {
         top: 0;
+    }
+}
+
+@keyframes to-left {
+    from {
+        top: 0;
+        left: 100%;        
+    }
+
+    to {
+        top: 0;
+        left: 0;
+    }
+}
+
+@keyframes to-right {
+    from {
+        top: 0;
+        right: 100%;        
+    }
+
+    to {
+        top: 0;
+        right: 0;
     }
 }
