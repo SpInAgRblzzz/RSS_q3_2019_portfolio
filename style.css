@@ -110,10 +110,15 @@ ul {
   margin-right: 15px;
 }
 
+.spoiler:not(.spoiler--disabled) {
+  overflow: hidden;
+  position: relative;
+}
 .spoiler:not(.spoiler--disabled) .spoiler__title {
   position: relative;
   border: 1px solid #131313;
   cursor: pointer;
+  background: #ffffff;
 }
 .spoiler:not(.spoiler--disabled) .spoiler__title:hover {
   background-color: #788872;
@@ -131,24 +136,38 @@ ul {
   right: 35px;
   top: 50%;
   margin-top: -3px;
+  transition: 200ms;
 }
-.spoiler:not(.spoiler--disabled).hidden {
-  overflow: hidden;
-  position: relative;
+.spoiler:not(.spoiler--disabled) .spoiler__content {
+  display: none;
 }
 .spoiler:not(.spoiler--disabled).hidden .spoiler__title {
   z-index: 0;
-  background: #ffffff;
 }
 .spoiler:not(.spoiler--disabled).hidden .spoiler__title::after {
   transform: rotate(90deg);
+  transition: 200ms;
 }
-.spoiler:not(.spoiler--disabled).hidden .spoiler__content {
-  position: absolute;
+.spoiler:not(.spoiler--disabled).hidden.active .spoiler__content {
+  animation-direction: reverse;
+}
+.spoiler:not(.spoiler--disabled).shown .spoiler__content {
+  display: block;
+}
+.spoiler:not(.spoiler--disabled).active .spoiler__content {
+  display: block;
+  position: relative;
+  animation: show 200ms 1 linear;
   z-index: -1;
-  position: absolute;
-  width: 100%;
-  bottom: 100%;
+}
+
+@keyframes show {
+  0% {
+    top: -20em;
+  }
+  100% {
+    top: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

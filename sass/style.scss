@@ -136,11 +136,16 @@ ul {
     }
 }
 
+
+
 .spoiler:not(.spoiler--disabled) {
+    overflow: hidden;
+    position: relative;
+
     .spoiler__title {
         position: relative;
         border: 1px solid #131313;
-        cursor: pointer;        
+        cursor: pointer;
         background: #ffffff;
 
         &:hover {
@@ -166,28 +171,57 @@ ul {
             top: 50%;
 
             margin-top: -3px;
+
+            transition: 200ms;
         }
     }
 
-    &.hidden {
-        overflow: hidden;
-        position: relative;
+    .spoiler__content {
+        display: none;
+    }
 
+
+    &.hidden {
         .spoiler__title {
             z-index: 0;
 
             &::after {
                 transform: rotate(90deg);
-
+                transition: 200ms;
             }
         }
 
-        .spoiler__content {
-            position: absolute;
-            z-index: -1;
-            position: absolute;
-            width: 100%;
-            bottom: 100%;
+        &.active {
+            .spoiler__content {
+                animation-direction: reverse;
+            }
         }
+    }
+
+    &.shown {
+        .spoiler__content {
+            display: block;
+        }
+    }
+
+    &.active {
+        .spoiler__content {
+            display: block;
+            position: relative;
+            animation: show 200ms 1 linear;
+            z-index: -1;
+        }
+    }
+}
+
+
+@keyframes show {
+
+    0% {
+        top: -20em;
+    }
+
+    100% {
+        top: 0;
     }
 }
