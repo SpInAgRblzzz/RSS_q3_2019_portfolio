@@ -30,6 +30,7 @@ a {
 }
 .info__photo {
   max-width: 200px;
+  margin-top: 40px;
 }
 .info ul {
   list-style: none;
