@@ -328,7 +328,7 @@ ul {
         right: 0;
         bottom: 0;
         width: 100%;
-        
+
         display: flex;
 
         background-color: #b4b4b4;
@@ -347,7 +347,9 @@ ul {
 }
 
 .yalow {
-    iframe,.slider__project-wrapper {
+
+    iframe,
+    .slider__project-wrapper {
         height: 1849px;
     }
 
@@ -359,7 +361,9 @@ ul {
 }
 
 .repair {
-    iframe,.slider__project-wrapper {
+
+    iframe,
+    .slider__project-wrapper {
         height: 10163px;
     }
 
@@ -426,5 +430,23 @@ ul {
 @media (max-width: 830px) {
     .education {
         max-width: 760px;
+    }
+
+    .slider__item.active {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    .slider__nav {
+        display: none;
+    }
+
+    .projects {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .slider__item-description.spoiler:not(spoiler--disabled) {
+        overflow: visible;
     }
 }

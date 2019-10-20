@@ -268,14 +268,16 @@ ul {
   display: none;
 }
 
-.yalow iframe, .yalow .slider__project-wrapper {
+.yalow iframe,
+.yalow .slider__project-wrapper {
   height: 1849px;
 }
 .yalow.mobile iframe {
   width: 640px;
 }
 
-.repair iframe, .repair .slider__project-wrapper {
+.repair iframe,
+.repair .slider__project-wrapper {
   height: 10163px;
 }
 .repair.mobile iframe {
@@ -329,6 +331,24 @@ ul {
 @media (max-width: 830px) {
   .education {
     max-width: 760px;
+  }
+
+  .slider__item.active {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+
+  .slider__nav {
+    display: none;
+  }
+
+  .projects {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .slider__item-description.spoiler:not(spoiler--disabled) {
+    overflow: visible;
   }
 }
 
