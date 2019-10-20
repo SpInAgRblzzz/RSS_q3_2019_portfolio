@@ -1007,6 +1007,7 @@ fieldset {
 }
 .types-of-repair {
   padding-top: 150px;
+  background-color: #FFFFFF;
 }
 .types-of-repair {
   max-width: 1440px;
@@ -1193,6 +1194,7 @@ fieldset {
   max-width: 1440px;
   margin: 0 auto;
   padding-bottom: 130pxs;
+  background-color: #FFFFFF;
 }
 
 .request__wrapper {
@@ -1445,6 +1447,7 @@ fieldset {
   background-repeat: no-repeat;
   background-position-y: 113px;
   position: relative;
+  background-color: #FFFFFF;
 }
 .examples::before {
   content: "";
@@ -2246,6 +2249,7 @@ fieldset {
 }
 .clients {
   padding-top: 105px;
+  background-color: #FFFFFF;
 }
 .clients {
   max-width: 1440px;
