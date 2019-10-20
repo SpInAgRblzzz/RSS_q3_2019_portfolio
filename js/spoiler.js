@@ -1,24 +1,27 @@
-const spoiler = document.querySelector(`.education.spoiler`);
+const spoilers = document.querySelectorAll('.spoiler');
 
-const spoilerTitle = spoiler.querySelector('.spoiler__title');
+spoilers.forEach(function (spoiler) {
+    const spoilerTitle = spoiler.querySelector('.spoiler__title');
 
-const spoilerContent = spoiler.querySelector('.spoiler__content');
+    const spoilerContent = spoiler.querySelector('.spoiler__content');
 
-spoilerTitle.addEventListener('click', function () {
-    const enabled = spoiler.classList.contains('spoiler--disabled');
-    if (!enabled) {
-        const hasVisibility = (spoiler.classList.contains('hidden')||spoiler.classList.contains('shown'));
-        if(!hasVisibility){
-            spoiler.classList.add('shown');
+    spoilerTitle.addEventListener('click', function () {
+        const enabled = spoiler.classList.contains('spoiler--disabled');
+        if (!enabled) {
+            const hasVisibility = (spoiler.classList.contains('hidden') || spoiler.classList.contains('shown'));
+            if (!hasVisibility) {
+                spoiler.classList.add('shown');
+            }
+
+            spoiler.classList.add('active');
+
+            spoilerContent.addEventListener('animationend', function () {
+                spoiler.classList.remove('active');
+            });
+
+            spoiler.classList.toggle('hidden');
+            spoiler.classList.toggle('shown');
         }
-
-        spoiler.classList.add('active');
-
-        spoilerContent.addEventListener('animationend', function () {
-            spoiler.classList.remove('active');
-        });
-
-        spoiler.classList.toggle('hidden');
-        spoiler.classList.toggle('shown');
-    }
+    });
 });
+
