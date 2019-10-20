@@ -65,13 +65,13 @@ modeBack.addEventListener('click', function () {
     const slider = document.querySelector('.slider');
     slider.classList.remove('project-mode');
 
-    const currentActive = slider.querySelector('.active');    
+    const currentActive = slider.querySelector('.active');
 
     const placeholder = currentActive.querySelector('.slider__project-placeholder');
     placeholder.classList.remove('inactive');
 
     const project = currentActive.querySelector('.slider__project-wrapper');
-    project.classList.add('inactive');    
+    project.classList.add('inactive');
 
     buttonBack.classList.remove('project-mode');
     buttonFoward.classList.remove('project-mode');
@@ -81,15 +81,28 @@ modeBack.addEventListener('click', function () {
 
 const modeMobile = mode.querySelector('.mode__toggle');
 
-modeMobile.addEventListener('click',function(){
+modeMobile.addEventListener('click', function () {
     const slider = document.querySelector('.slider');
 
     const currentActive = slider.querySelector('.active');
-    if(currentActive.classList.contains('mobile')){
+    if (currentActive.classList.contains('mobile')) {
         currentActive.classList.remove('mobile');
         modeMobile.innerHTML = 'MOBILE';
-    }else{
+    } else {
         currentActive.classList.add('mobile');
         modeMobile.innerHTML = 'DESKTOP';
+    }
+});
+
+
+window.addEventListener('resize', function () {
+    if (document.documentElement.clientWidth <= 830) {
+        sliderItems.forEach(function(item){
+            item.querySelector('.spoiler').classList.remove('spoiler--disabled');
+        });
+    } else {
+        sliderItems.forEach(function(item){
+            item.querySelector('.spoiler').classList.add('spoiler--disabled');
+        });
     }
 });
